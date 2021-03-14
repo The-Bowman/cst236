@@ -44,20 +44,26 @@ require 'C:\MAMP\htdocs\cst236\milestone\Services\UserBusinessService.php';
                 <input class="button" type="submit" value="Update Account" onclick="confirm('Update this account?')">
             </div>
         </form>
-        <form action="../handlers/_promoteUser.php" method="POST">
+        <form onsubmit="return confirm('Promote to Admin?')" action="../handlers/_promoteUser.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $_GET['user_id']; ?>">
-            <button onClick="confirm('Promote to Admin?')">Promote to Admin</button>
+            <button>Promote to Admin</button>
         </form>
-        <form action="../handlers/_removeUser.php" method="POST">
+        <form onsubmit="return remove()" action="../handlers/_removeUser.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $_GET['user_id']; ?>">
-            <button onclick="remove('Delete User Account?')">Delete User</button>
+            <button>Delete User</button>
         </form>
     </div>
     <script>
     function remove() {
         let confirmation = confirm("Delete User?");
         if (confirmation == true) {
-            confirm("Are you sure? This cannot be undone");
+            if (confirm("Are you sure? This cannot be undone")) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
         }
     }
     </script>

@@ -26,7 +26,8 @@ require 'C:\MAMP\htdocs\cst236\milestone\Services\ProductBusinessService.php';
         <div class="formHeader">
             <h3>Edit Account</h3>
         </div>
-        <form action="../handlers/updateProductHandler.php" method="POST">
+        <form onsubmit="return confirm('Update this Product?')" action="../handlers/updateProductHandler.php"
+            method="POST">
             <div class="label">
                 <input type="hidden" name="id" value="<?php echo $_GET['productID']; ?>">
                 <label for="productName">Product Name: </label>
@@ -41,21 +42,26 @@ require 'C:\MAMP\htdocs\cst236\milestone\Services\ProductBusinessService.php';
                     required><br><br>
                 <label for="img">Image URL: </label>
                 <input type="text" name="img" value="<?php echo $result->getImg(); ?>" required><br><br>
-                <input class="button" type="submit" value="Update Product" onclick="confirm('Update this product?')">
+                <input class="button" type="submit" value="Update Product">
             </div>
         </form>
 
-        <form action="../handlers/_removeProduct.php" method="POST">
+        <form onsubmit="return remove()" action="../handlers/_removeProduct.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $_GET['productID']; ?>">
-            <button class="button" style="position: absolute; top: 28.06em; left: 51em;"
-                onclick="remove('Delete User Account?')">Delete Product</button>
+            <button class="button" style="position: absolute; top: 28.06em; left: 51em;">Delete Product</button>
         </form>
     </div>
     <script>
     function remove() {
         let confirmation = confirm("Delete Product?");
         if (confirmation == true) {
-            confirm("Are you sure? This cannot be undone");
+            if (confirm("Are you sure? This cannot be undone")) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
         }
     }
     </script>
