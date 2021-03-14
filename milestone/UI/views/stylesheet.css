@@ -1,0 +1,139 @@
+.label {
+    position: absolute;
+    left: 33%;
+    top: 15%;
+    border-width: 4px;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block;
+    text-align: right;
+    padding-left: 16px;
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+}
+
+.formHeader {
+    position: absolute;
+    left: 33%;
+    top: 45px;
+}
+
+.loginPos {
+    border: #222 solid;
+    border-width: 1px;
+    border-left: transparent;
+    width: 49%;
+    height: 750px;
+    position: absolute;
+    top: 170px;
+    left: 9px;
+}
+
+.registerPos {
+    border: #222 solid;
+    border-right: transparent;
+    border-width: 1px;
+    width: 50%;
+    height: 750px;
+    position: absolute;
+    top: 170px;
+    right: 9px;
+}
+
+.addProdPos {
+    border: #222 solid;
+    border-width: 1px;
+    width: 49%;
+    height: 800px;
+    position: absolute;
+    top: 150px;
+    left: 100px;
+}
+
+.login_form .main {
+    text-align: center;
+    border: 3px;
+    border-style: groove;
+    background-color: #222;
+    color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 16px;
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+}
+
+.button {
+    padding: 4px 6px;
+    border-width: 4px;
+    text-align: center;
+    color: aliceblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(to right, red, purple);
+}
+
+.button:hover {
+    background-image: linear-gradient(to left, red, purple);
+}
+
+.center {
+    text-align: center;
+}
+
+.loginButton {
+    position: absolute;
+    top: 10px;
+    right: 7px;
+}
+
+.ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #222;
+}
+
+.li {
+    float: right;
+}
+
+.li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.li a:hover {
+    background-color: #666;
+}
+
+.ul .search-container {
+    float: left;
+    padding-left: 4px;
+}
+
+.ul .search-container input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+}
+
+.ul .search-container input[type=submit] {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.ul .search-container input[type=submit]:hover {
+    background: #ccc;
+}
