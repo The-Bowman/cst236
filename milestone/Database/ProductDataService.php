@@ -54,12 +54,12 @@ class ProductDataService
             // echo "I found " . $result->num_rows . " results<br>";
 
 
-
             while ($row = $result->fetch_assoc()) {
                 // echo "bump";
-                $product = new Product($row['product_name'], $row['product_descr'], $row['stock'], $row['price'], $row['img']);
+                $product = new Product($row['id'], $row['product_name'], $row['product_descr'], $row['stock'], $row['price'], $row['img']);
             }
             // echo $product->getName();
+
             return $product;
         }
     }

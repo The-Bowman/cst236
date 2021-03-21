@@ -57,7 +57,7 @@ class UserDataService
 
             while ($row = $result->fetch_assoc()) {
                 // echo "bump";
-                $user = new User($row['first_name'], $row['last_name'], $row['email'], $row['username'], $row['pass'], $row['admin']);
+                $user = new User($row['user_id'], $row['first_name'], $row['last_name'], $row['email'], $row['username'], $row['pass'], $row['admin']);
             }
             // echo $product->getName();
             return $user;

@@ -1,7 +1,7 @@
 <?php
-// require_once '../AutoLoader.php';
-require_once 'C:\MAMP\htdocs\cst236\milestone\Database\ProductDataService.php';
-require_once 'models/Product.php';
+require_once 'C:\MAMP\htdocs\cst236\milestone\AutoLoader.php';
+// require_once 'C:\MAMP\htdocs\cst236\milestone\Database\ProductDataService.php';
+// require_once 'models/Product.php';
 
 class ProductBusinessService
 {

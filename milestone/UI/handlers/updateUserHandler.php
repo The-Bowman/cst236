@@ -9,7 +9,7 @@ if ($con) {
     echo "connected successfully<br>";
 }
 $id = $_POST['id'];
-$user = new User($_POST['firstName'], $_POST['lastName'], $_POST['email'], $_POST['userName'], $_POST['password'], 0);
+$user = new User(0, $_POST['firstName'], $_POST['lastName'], $_POST['email'], $_POST['userName'], $_POST['password'], 0);
 
 
 $first = $user->getFirst();

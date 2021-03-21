@@ -24,7 +24,7 @@ $loginstatus = $_SESSION['loggedIn'];
     <ul class="ul">
         <li class="li"><a id="loginBtn" href="login.php">Login</a></li>
         <li class="li"><a href="profile.php">Profile</a></li>
-        <li class="li"><a href="cart.php">Cart</a></li>
+        <li class="li"><a href="showCart.php">Cart</a></li>
         <div class="search-container">
             <form action="../handlers/productSearchHandler.php">
                 <input type="text" name="productName" placeholder="Search for a product name...">

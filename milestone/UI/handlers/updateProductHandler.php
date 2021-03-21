@@ -9,7 +9,7 @@ if ($con) {
     echo "connected successfully<br>";
 }
 $id = $_POST['id'];
-$product = new Product($_POST['productName'], $_POST['productDescr'], $_POST['stock'], $_POST['price'], $_POST['img']);
+$product = new Product($id, $_POST['productName'], $_POST['productDescr'], $_POST['stock'], $_POST['price'], $_POST['img']);
 
 
 $name = $product->getName();
