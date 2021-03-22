@@ -51,7 +51,7 @@ require '../funcs.php';
         <div class="formHeader">
             <h3>Create an Account</h3>
         </div>
-        <form action="handlers/registrationHandler.php" method="POST">
+        <form action="../handlers/registrationHandler.php" method="POST">
             <div class="label">
                 <label for="firstName">First Name: </label>
                 <input type="text" name="firstName" required><br><br>

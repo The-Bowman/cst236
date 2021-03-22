@@ -9,12 +9,17 @@ if ($con) {
     echo "connected successfully<br>";
 }
 
-$user = new User($_POST['firstName'], $_POST['lastName'], $_POST['email'], $_POST['userName'], $_POST['password'], 0);
+$user = new User(0, $_POST['firstName'], $_POST['lastName'], $_POST['email'], $_POST['userName'], $_POST['password'], 0);
+$first = $user->getFirst();
+$last = $user->getLast();
+$email = $user->getEmail();
+$username = $user->getUsername();
+$password = $user->getPassword();
 
 
-echo "username: " . $user->username . "<br>";
+echo "username: " . $username . "<br>";
 
-$check = "SELECT * FROM users WHERE USERNAME = '$user->username';";
+$check = "SELECT * FROM users WHERE USERNAME = '$username';";
 $result = mysqli_query($con, $check);
 $count = mysqli_num_rows($result);
 
@@ -30,7 +35,7 @@ if ($count > 0) {
     exit;
 }
 
-$sql = "INSERT INTO users (first_name, last_name, username, pass, email) VALUES ('$user->first', '$user->last', '$user->username', '$user->password', '$user->email');";
+$sql = "INSERT INTO users (first_name, last_name, username, pass, email) VALUES ('$first', '$last', '$username', '$password', '$email');";
 
 $result = mysqli_query($con, $sql);
 if ($result) {
