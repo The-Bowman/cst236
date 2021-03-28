@@ -19,7 +19,7 @@ $c->addItem($id);
 $c->calcTotal();
 
 $_SESSION['cart'] = $c;
-echo "<pre>";
-print_r($_SESSION['cart']);
-echo "</pre>";
-// header('location: ../views/showCart.php');
+// echo "<pre>";']);
+// echo "</pre>";
+// print_r($_SESSION['cart
+header('location: ../views/showCart.php');

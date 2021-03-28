@@ -3,8 +3,8 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-<link rel="stylesheet" href="stylesheet.css">
-
+<link rel="stylesheet" href="../views/stylesheet.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <body>
     <?php
@@ -35,8 +35,8 @@
 
     $user = $ubs->getUserByID($_SESSION['userID']);
 
-    echo "<h2 style='text-align: center;'>Your Cart</h2>";
-    echo "<h4 style='text-align: center;'>Cart for user: " . $user->getUsername() . "</h4>";
+    echo "<h2 style='text-align: center;'>Step 1</h2>";
+    echo "<h4 style='text-align: center;'>Checkout</h4>";
     ?>
 
     <ul class="ul">
@@ -58,27 +58,22 @@
         <li class="li"><a href="../handlers/productSearchHandler.php">All Products</a></li>
         <li class="li"><a href="../handlers/userHandler.php">All Users</a></li>
     </ul>
-
+    <div style="padding-left: 8px;">
+        <h3>Validation info:</h3>
+        <p>Name: Dean Winchester</p>
+        <p>Card Number: 1234 5678 9012 3456</p>
+        <p>Exp Month: 10</p>
+        <p>Exp Year: 2023</p>
+        <p>CCV: 123</p>
+    </div>
     <script>
     let x = <?php echo json_encode($loginstatus); ?>;
     if (x == true) {
         document.getElementById("loginBtn").style.visibility = "hidden";
     }
 
-    function goToCheckout() {
-        location.href = "../handlers/processCheckout.php";
-    }
-
-    function goHome() {
-        location.href = "index.php";
-    }
-
-    function changeCheckoutColor() {
-        document.getElementById("checkout").style.backgroundColor = "green";
-    }
-
-    function revertCheckoutColor() {
-        document.getElementById("checkout").style.backgroundColor = "blue";
+    function returnToCart() {
+        location.href = "../views/showCart.php";
     }
     </script>
     <div>
@@ -110,13 +105,33 @@
         }
         ?>
     </div>
-    <div class="center">
-        <button class="goHome" onclick="goHome()">CONTINUE SHOPPING</button>
-        <button class="shiver" id="checkout" onclick="goToCheckout()" onmouseover="changeCheckoutColor()"
-            onmouseout="revertCheckoutColor()">CHECKOUT</button>
-        <br><br>
+    <br>
+    <div class="container" style="max-width: 500px;">
+        <form action="processCheckout2.php" method="POST">
+            <div class="form-group">
+                <label for="owner">Enter Name on Card:</label>
+                <input type="text" class="form-control" name="owner" required>
+            </div>
+            <div class="form-group">
+                <label for="cardNum">Enter Card Number: </label>
+                <input type="text" class="form-control" name="cardNum" required>
+            </div>
+            <div class="form-group">
+                <label for="month">Enter Expiration Month: </label>
+                <input type="text" class="form-control" name="month" required>
+            </div>
+            <div class="form-group">
+                <label for="year">Enter Expiration Year: </label>
+                <input type="text" class="form-control" name="year" required>
+            </div>
+            <div class="form-group">
+                <label for="ccv">Enter CCV: </label><br>
+                <input type="text" class="form-control" name="ccv" required>
+            </div>
+            <button type="submit" class="btn btn-default">Confirm</button>
+        </form>
     </div>
-
+    <br>
 </body>
 
 </html>

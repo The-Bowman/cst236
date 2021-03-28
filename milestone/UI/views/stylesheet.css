@@ -83,7 +83,16 @@
     text-align: center;
     color: aliceblue;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: yellow;
+    background-color: blue;
+}
+
+.gohome {
+    padding: 4px 6px;
+    border-width: 4px;
+    text-align: center;
+    color: aliceblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #8b5e22;
 }
 
 .center {
