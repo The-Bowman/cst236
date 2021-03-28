@@ -23,6 +23,7 @@
 
     if (isset($_SESSION['userID'])) {
         $userid = $_SESSION['userID'];
+        $loginstatus = true;
     } else {
         echo "You are not logged in<br>";
         exit;

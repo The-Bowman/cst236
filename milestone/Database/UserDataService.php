@@ -63,4 +63,28 @@ class UserDataService
             return $user;
         }
     }
+
+    function findUserAddress($id)
+    {
+        $db = new Database();
+        $con = $db->getConnection();
+
+        echo $id;
+
+        $sql = "SELECT address_id FROM user_addresses WHERE user_id = '$id';";
+        $result = $con->query($sql);
+
+        if (!$result) {
+            echo "<br>no user address<br>";
+            return null;
+        } else {
+
+            while ($row = $result->fetch_assoc()) {
+                $addy = $row['address_id'];
+            }
+            echo $addy;
+
+            return $addy;
+        }
+    }
 }

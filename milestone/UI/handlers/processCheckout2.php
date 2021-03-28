@@ -6,23 +6,29 @@ require_once 'C:\MAMP\htdocs\cst236\milestone\AutoLoader.php';
 session_start();
 if (isset($_SESSION['cart']) && isset($_SESSION['userID'])) {
     $c = $_SESSION['cart'];
+    $loginstatus = true;
 } else {
     echo "Nothing in the cart yet or you are not yet logged in<br>";
     exit;
 }
 require_once 'validateCC.php';
+include '_userAddressID.php';
+$ubs = new UserBusinessService();
+
 
 $items = $c->getItems();
 $total = $c->getTotal();
 
-$order = new Order(null, date("Y/m/d h:i:s"), $_SESSION['userID'], 3, $total);
+
+$order = new Order(null, date("Y/m/d h:i:s"), $_SESSION['userID'], $userAddressID, $total);
 $obs = new OrderBusinessService();
 
-$ubs = new UserBusinessService();
+
 $user = $ubs->getUserByID($_SESSION['userID']);
 $first = $user->getFirst();
 $last = $user->getLast();
 $total = $order->getTotal();
+
 
 
 $orderID = $obs->checkout($order, $c);

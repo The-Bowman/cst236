@@ -20,4 +20,11 @@ class UserBusinessService
         $arr = $search->findByUserID($id);
         return $arr;
     }
+
+    function getAddressIDByUserID($user_id)
+    {
+        $search = new UserDataService();
+        echo "hello";
+        return $addy = $search->findUserAddress($user_id);
+    }
 }
