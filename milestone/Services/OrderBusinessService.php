@@ -46,4 +46,12 @@ class OrderBusinessService
             $con->rollback();
         }
     }
+
+    function getOrdersBetweenDates($start, $end)
+    {
+        $ods = new OrderDataService();
+        $sales = $ods->getOrdersBetweenDates($start, $end);
+
+        return $sales;
+    }
 }

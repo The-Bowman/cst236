@@ -10,15 +10,19 @@ $loginstatus = $_SESSION['loggedIn'];
     html {
         background-color: lightgray;
     }
+
+    * {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
     </style>
-    <title>E-Comm</title>
+    <title>Mock Latin</title>
 </head>
 <link rel="stylesheet" href="stylesheet.css">
 
 <body>
 
     <div class="center">
-        <h1>Welcome to E-Comm</h1>
+        <h1>Welcome to the Mock Latin Store</h1>
     </div>
 
     <ul class="ul">

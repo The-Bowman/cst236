@@ -66,4 +66,37 @@ class OrderDataService
             return -1;
         }
     }
+
+    function getOrdersBetweenDates($start, $end)
+    {
+        $db = new Database();
+        $con = $db->getConnection();
+        if ($con->connect_error) {
+            echo "connection failure";
+        }
+
+        $sql = "SELECT orders.id, orders.order_date, orders.users_id, order_details.quantity, orders.total FROM orders LEFT JOIN order_details ON orders.id=order_details.order_id WHERE order_date >= '$start' and order_date < '$end' ORDER BY order_details.quantity desc; ";
+
+        $result = $con->query($sql);
+
+        if (!$result) {
+            echo "something went wrong in the sql statement";
+            exit;
+        }
+
+        if ($result->num_rows == 0) {
+            return null;
+        } else {
+
+            $index = 0;
+            $orders = array();
+
+            while ($row = $result->fetch_assoc()) {
+                $orders[$index] = array($row['id'], $row['order_date'], $row['users_id'], $row['quantity'], $row['total']);
+                ++$index;
+            }
+
+            return $orders;
+        }
+    }
 }

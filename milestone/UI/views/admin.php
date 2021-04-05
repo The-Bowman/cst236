@@ -13,6 +13,10 @@ if ($_SESSION['admin'] != 1) {
     html {
         background-color: lightgray;
     }
+
+    * {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
     </style>
     <title>E-Comm</title>
 </head>
@@ -43,6 +47,7 @@ if ($_SESSION['admin'] != 1) {
         ?>
         <li class="li"><a href="../handlers/productSearchHandler.php">All Products</a></li>
         <li class="li"><a href="../handlers/userHandler.php">All Users</a></li>
+        <li class="li"><a href="salesReportCreator.php">Sales Report</a></li>
     </ul>
 
     <script>
