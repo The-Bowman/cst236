@@ -22,7 +22,8 @@ $products = $pbs->searchByProductName($name);
 
 
 if ($products) {
-    include '_displayProducts.php';
+    // include '_displayProducts.php';
+    include '_displayProductCards.php';
 } else {
     echo "no results";
 }

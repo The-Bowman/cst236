@@ -2,7 +2,6 @@
 session_start();
 include '../funcs.php';
 require_once 'C:\MAMP\htdocs\cst236\milestone\Services\models\User.php';
-echo "yo dawg<br>";
 $con = dbConnect();
 
 if ($con) {

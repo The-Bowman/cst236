@@ -44,6 +44,7 @@
                 <th>Product Description</th>
                 <th>Stock</th>
                 <th>Price</th>
+                <th>Photo</th>
             </tr>
         </thead>
         <tbody> <?php
@@ -52,7 +53,7 @@
                     $y = $products[$x][0];
                     echo "<tr>";
                     echo "<td><a href='../views/productpage.php?productID=$y'>" . $products[$x][0] . "</a></td>" . "<td>" . $products[$x][1] . "</td>" . "</td>" . "<td>" . $products[$x][2] . "</td>"
-                        . "<td>" . $products[$x][3] . "</td>" . "<td>" . $products[$x][4] . "</td>";
+                        . "<td>" . $products[$x][3] . "</td>" . "<td>" . $products[$x][4] . "</td>" . "<td>" . $products[$x][5] . "</td>";
                     echo "</tr>";
                 }
 

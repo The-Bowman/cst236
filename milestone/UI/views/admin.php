@@ -6,19 +6,13 @@ if ($_SESSION['admin'] != 1) {
 }
 ?>
 <!DOCTYPE HTML>
-<html class="main">
+<html>
 
 <head>
     <style>
-    html {
-        background-color: lightgray;
-    }
 
-    * {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
     </style>
-    <title>E-Comm</title>
+    <title>Mock Latin. Admin</title>
 </head>
 <link rel="stylesheet" href="stylesheet.css">
 
@@ -99,10 +93,11 @@ if ($_SESSION['admin'] != 1) {
                     value="Create Account">
             </div>
         </form>
+        <p>To edit an account <a href="../handlers/userHandler.php">
+                Click Here </a></p>
     </div>
-    <p style="position: absolute; top: 11em; right: 14em;">To edit an account, use the 'All Users' link in the
-        navigation
-        bar.</p>
+
+
 
 </body>
 

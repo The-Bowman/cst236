@@ -40,10 +40,10 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Product Name</th>
-                <th>Product Description</th>
-                <th>Quantity</th>
-                <th>Price</th>
+                <th>Time of Sale</th>
+                <th>User ID of Buyer</th>
+                <th>Quantity Sold</th>
+                <th>Order Total</th>
             </tr>
         </thead>
         <tbody> <?php
@@ -60,11 +60,11 @@
         </tbody>
     </table>
     <a href="processSalesReportJSON.php?=startDate=<?php echo $start; ?>&endDate=<?php echo $end; ?>">View JSON</a>
+    <br />
+    <a href="../views/index.php">Home</a>
     <script>
     $(document).ready(function() {
         $('#report').DataTable();
     });
     </script>
-
-
 </body>

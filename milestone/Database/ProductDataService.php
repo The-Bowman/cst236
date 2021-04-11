@@ -25,7 +25,7 @@ class ProductDataService
             $index = 0;
             $products = array();
             while ($row = $result->fetch_assoc()) {
-                $products[$index] = array($row['id'], $row['product_name'], $row['product_descr'], $row['stock'], $row['price']);
+                $products[$index] = array($row['id'], $row['product_name'], $row['product_descr'], $row['stock'], $row['price'], $row['img']);
                 ++$index;
             }
             return $products;

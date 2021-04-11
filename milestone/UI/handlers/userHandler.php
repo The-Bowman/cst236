@@ -15,6 +15,7 @@ $users = $pbs->searchByUserName($name);
 
 ?>
 <h3>Search Results</h3>
+<a href="../views/admin.php">Back to Admin</a>
 <?php
 
 

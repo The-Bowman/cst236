@@ -5,21 +5,13 @@ require '../../AutoLoader.php';
 // $loginstatus = $_SESSION['loggedIn'];
 ?>
 <!DOCTYPE HTML>
-<html class="main">
+<html>
 
 <head>
-    <style>
-    html {
-        background-color: lightgray;
-    }
 
-    * {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-    </style>
-    <title>Mock Latin</title>
+    <title>Mock Latin. Home</title>
 </head>
-<link rel="stylesheet" href="stylesheet.css">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
 
 <body>
 
@@ -47,7 +39,31 @@ require '../../AutoLoader.php';
         ?>
         <li class="li"><a href="../handlers/productSearchHandler.php">All Products</a></li>
     </ul> -->
+    <?php
 
+    $num = rand(0, 1000);
+    $pbs = new ProductBusinessService();
+    $featured = $pbs->getProductByID($num);
+    ?>
+    <div class="container-md">
+        <span class="d-block p-2 bg-success text-white" style="text-align: center;">Featured Product</span>
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <div class="card" style="width: 20rem;   margin-top: 1rem;">
+                    <img src="<?php echo $featured->getImg(); ?>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $featured->getName(); ?></h5>
+                        <p class="card-text"><?php echo $featured->getDescr(); ?></p>
+                        <p class="card-text">$<?php echo $featured->getPrice(); ?></p>
+                        <form action="../handlers/addToCart.php">
+                            <input type="hidden" name="prod_id" value="<?php echo $featured->getID(); ?>">
+                            <input class="btn btn-primary" type="submit" value="Add to Cart">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
     let x = <?php //echo json_encode($loginstatus); 
                 ?>;

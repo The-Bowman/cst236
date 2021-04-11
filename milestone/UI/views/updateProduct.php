@@ -23,9 +23,13 @@ require 'C:\MAMP\htdocs\cst236\milestone\Services\ProductBusinessService.php';
     $product = new ProductBusinessService();
     $result = $product->getProductByID($_GET['productID']);
     ?>
+
     <div class="login_form">
         <div class="formHeader">
-            <h3>Edit Account</h3>
+            <br />
+            <br />
+
+            <h3>Edit Product</h3>
         </div>
         <form onsubmit="return confirm('Update this Product?')" action="../handlers/updateProductHandler.php"
             method="POST">
@@ -46,9 +50,12 @@ require 'C:\MAMP\htdocs\cst236\milestone\Services\ProductBusinessService.php';
                 <input class="button" type="submit" value="Update Product">
             </div>
         </form>
+    </div>
 
+    <div style="position: relative;">
         <form onsubmit="return remove()" action="../handlers/_removeProduct.php" method="POST">
-            <input type="hidden" name="id" value="<?php echo $_GET['productID']; ?>">
+            <input type="hidden" name="id" value="<?php echo $_GET['productID'];
+                                                    ?>">
             <button class="button" style="position: absolute; top: 28.06em; left: 51em;">Delete Product</button>
         </form>
     </div>

@@ -10,10 +10,10 @@ require_once '../../AutoLoader.php';
 <head>
     <style>
     html {
-        background-color: lightgray;
+        background-color: grey;
     }
     </style>
-    <title>E-Comm</title>
+    <title>Mock Latin. Login</title>
     <div class="center">
         <header>
             <h2> Sign in or Create an Account</h2>

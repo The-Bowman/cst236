@@ -7,6 +7,7 @@ require_once 'header.php';
 <html>
 
 <head>
+    <title>Mock Latin. Product Page</title>
     <style>
     html {
         text-align: center;
@@ -20,23 +21,25 @@ require_once 'header.php';
 </head>
 
 <body>
-    <?php
-    $id = $_GET['productID'];
-    $item = new ProductBusinessService();
-    $result = $item->getProductByID($_GET['productID']);
+    <div style="margin-top: 2rem;">
+        <?php
+        $id = $_GET['prod_id'];
+        $item = new ProductBusinessService();
+        $result = $item->getProductByID($_GET['prod_id']);
 
-    echo "<img src=" . $result->getImg() . ">";
-    echo "<p>Product Name: " . $result->getName() . "</p>";
-    echo "<p>Description: " . $result->getDescr() . "</p>";
-    echo "<p>Inventory Count: " . $result->getStock() . "</p>";
-    echo "<p>Price: $" . $result->getPrice() . "</p>";
-    echo "<a href='../handlers/addToCart.php?prod_id=$id'>ADD TO CART</a><br>";
-    if (isset($_SESSION['loggedIn']) && $_SESSION['admin'] == 1) {
-        echo "<a href=updateProduct.php?productID=" . $_GET['productID'] . ">Update Product</a>";
-    }
-    echo "<br><a href='index.php'>Home</a>";
+        echo "<img src=" . $result->getImg() . ">";
+        echo "<p>Product Name: " . $result->getName() . "</p>";
+        echo "<p>Description: " . $result->getDescr() . "</p>";
+        echo "<p>Inventory Count: " . $result->getStock() . "</p>";
+        echo "<p>Price: $" . $result->getPrice() . "</p>";
+        echo "<a class='btn btn-primary' href='../handlers/addToCart.php?prod_id=$id'>ADD TO CART</a><br>";
+        if (isset($_SESSION['loggedIn']) && $_SESSION['admin'] == 1) {
+            echo "<a style='margin: 2px;' class='btn btn-secondary' href='updateProduct.php?productID=$id'>Update Product</a>";
+        }
+        echo "<br><a class='btn btn-primary' href='index.php'>Home</a>";
 
-    ?>
+        ?>
+    </div>
 </body>
 
 </html>

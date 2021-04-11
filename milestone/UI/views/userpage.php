@@ -10,6 +10,7 @@ require 'C:\MAMP\htdocs\cst236\milestone\Services\UserBusinessService.php';
 <html>
 
 <head>
+    <title>Mock Latin. Edit Users</title>
     <style>
     html {
         text-align: center;
@@ -25,7 +26,7 @@ require 'C:\MAMP\htdocs\cst236\milestone\Services\UserBusinessService.php';
     <div class="registerPos">
         <div class="formHeader">
             <h3>Edit Account</h3>
-            <a href="../handlers/updateUserHandler.php">handlerpage</a>
+            <a href="../handlers/userHandler.php">Go Back</a>
         </div>
         <form action="../handlers/updateUserHandler.php" method="POST">
             <div class="label">

@@ -99,8 +99,8 @@ function loginOrOut() {
 
     $user = $ubs->getUserByID($_SESSION['userID']);
 
-    echo "<h2 style='text-align: center;'>Your Cart</h2>";
-    echo "<h4 style='text-align: center;'>Cart for user: " . $user->getUsername() . "</h4>";
+    echo "<h2 style='text-align: center;'> " . $user->getUsername() . "'s Cart</h2>";
+    // echo "<h4 style='text-align: center;'>Cart for user: " . $user->getUsername() . "</h4>";
     ?>
 
     <!-- Original navbar being dropped in favor of bootstrap -->
@@ -168,7 +168,7 @@ function loginOrOut() {
             echo "<td>" . $product->getID() . "</td>";
             echo "<td>" . $product->getName() . "</td>";
             echo "<td>" . $product->getDescr() . "</td>";
-            echo "<td>" . $product->getImg() . "</td>";
+            echo "<td><img src=" . $product->getImg() . "></td>";
             echo "<td>" . $qty . "</td>";
             echo "<td>$" . $product->getPrice() . "</td>";
             echo "<td>$" . $qty * $product->getPrice() . "</td>";
