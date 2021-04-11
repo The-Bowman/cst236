@@ -1,6 +1,8 @@
 <?php
 session_start();
 require '../funcs.php';
+require_once 'header.php';
+require_once '../../AutoLoader.php';
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -21,16 +23,16 @@ require '../funcs.php';
 <link rel="stylesheet" href="stylesheet.css">
 
 <body>
-    <ul class="ul">
+    <!-- <ul class="ul">
         <li class="li"><a href="index.php">Home</a></li>
         <li class="li"><a href="profile.php">Profile</a></li>
         <li class="li"><a href="cart.php">Cart</a></li>
         <?php
-        if (isset($_SESSION['loggedIn']) == true) {
-            echo "<li class='li'><a href=handlers/logout.php>Logout</a></li>";
-        }
+        // if (isset($_SESSION['loggedIn']) == true) {
+        //     echo "<li class='li'><a href=handlers/logout.php>Logout</a></li>";
+        // }
         ?>
-    </ul>
+    </ul> -->
     <div class="loginPos">
         <div class="formHeader">
             <h3>Login</h3>

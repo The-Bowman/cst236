@@ -1,9 +1,17 @@
+<?php
+session_start();
+$loginstatus = $_SESSION['loggedIn'];
+$adminStatus = $_SESSION['admin'];
+?>
 <html>
 
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <title>Latin Mock. Order Receipt</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+    </script>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">MLS</a>
@@ -61,77 +69,6 @@
 
     }
     </script>
-
-
 </head>
-
-<?php
-
-require_once 'C:\MAMP\htdocs\cst236\milestone\AutoLoader.php';
-session_start();
-if (isset($_SESSION['cart']) && isset($_SESSION['userID'])) {
-    $c = $_SESSION['cart'];
-    $loginstatus = true;
-} else {
-    echo "Nothing in the cart yet or you are not yet logged in<br>";
-    exit;
-}
-require_once 'validateCC.php';
-include '_userAddressID.php';
-$ubs = new UserBusinessService();
-
-
-$items = $c->getItems();
-$total = $c->getTotal();
-
-if ($discount == "TAKE10") {
-    $total = $total - ($total * .1);
-}
-
-$order = new Order(null, date("Y/m/d h:i:s"), $_SESSION['userID'], $userAddressID, $total);
-$obs = new OrderBusinessService();
-
-
-$user = $ubs->getUserByID($_SESSION['userID']);
-$first = $user->getFirst();
-$last = $user->getLast();
-$total = $order->getTotal();
-
-
-
-$orderID = $obs->checkout($order, $c);
-?>
-
-
-
-<link rel="stylesheet" href="../views/stylesheet.css">
-
-<body>
-
-    <div class="center">
-        <h1>Receipt Confirmation</h1>
-    </div>
-
-
-    <h3>Order Receipt</h3>
-    <table class="table table-dark table-striped table-hover">
-        <tr>
-
-            <th>Order Number</th>
-            <th>Order To</th>
-            <th>Total</th>
-
-        </tr>
-        <tr>
-            <td> <?php echo $orderID; ?> </td>
-            <td> <?php echo $first . " " . $last; ?> </td>
-            <td> <?php echo $total; ?> </td>
-        </tr>
-
-    </table>
-
-
-</body>
-
 
 </html>

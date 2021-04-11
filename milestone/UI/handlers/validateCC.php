@@ -6,6 +6,7 @@ $cardNum = $_POST['cardNum'];
 $month = $_POST['month'];
 $year = $_POST['year'];
 $ccv = $_POST['ccv'];
+$discount = $_POST['discount'];
 
 $ccServ = new CreditCardServices($owner, $cardNum, $month, $year, $ccv);
 if ($ccServ->authenticate()) {

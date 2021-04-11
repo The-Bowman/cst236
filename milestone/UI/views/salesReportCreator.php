@@ -1,5 +1,6 @@
 <?php
 require_once 'C:\MAMP\htdocs\cst236\milestone\AutoLoader.php';
+require_once 'header.php';
 session_start();
 $loginstatus = $_SESSION['loggedIn'];
 if ($_SESSION['admin'] != 1 && !isset($_SESSION['loggedIn'])) {
@@ -29,7 +30,7 @@ if ($_SESSION['admin'] != 1 && !isset($_SESSION['loggedIn'])) {
     </div>
 
     <!-- begin nav-bar  -->
-    <ul class="ul">
+    <!-- <ul class="ul">
         <li class="li"><a id="loginBtn" href="login.php">Login</a></li>
         <li class="li"><a href="index.php">Home</a></li>
         <li class="li"><a href="profile.php">Profile</a></li>
@@ -39,15 +40,15 @@ if ($_SESSION['admin'] != 1 && !isset($_SESSION['loggedIn'])) {
                 <input type="text" name="productName" placeholder="Search for a product name...">
                 <input type="submit" value="Search">
             </form>
-        </div>
-        <?php
-        if (isset($_SESSION['loggedIn']) == true) {
-            echo "<li class='li'><a href=../handlers/logout.php>Logout</a></li>";
-        }
-        ?>
-        <li class="li"><a href="../handlers/productSearchHandler.php">All Products</a></li>
-        <li class="li"><a href="../handlers/userHandler.php">All Users</a></li>
-    </ul>
+        </div> -->
+    <?php
+    // if (isset($_SESSION['loggedIn']) == true) {
+    // echo "<li class='li'><a href=../handlers/logout.php>Logout</a></li>";
+    // }
+    ?>
+    <!-- <li class="li"><a href="../handlers/productSearchHandler.php">All Products</a></li> -->
+    <!-- <li class="li"><a href="../handlers/userHandler.php">All Users</a></li> -->
+    <!-- </ul> -->
     <!-- end nav-bar -->
 
     <div>

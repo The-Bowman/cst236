@@ -38,7 +38,7 @@ class OrderBusinessService
         }
 
         if ($orderID > 0 && $success == true) {
-            echo "success";
+            // echo "success";
             $con->commit();
             return $orderID;
         } else {

@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'C:\MAMP\htdocs\cst236\milestone\Services\ProductBusinessService.php';
+require_once 'header.php';
 ?>
 
 <html>

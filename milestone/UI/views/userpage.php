@@ -1,4 +1,5 @@
 <?php
+require_once 'header.php';
 session_start();
 if (!isset($_SESSION['loggedIn']) && $_SESSION['admin'] != 1) {
     header('location: index.php?=must_be_admin');

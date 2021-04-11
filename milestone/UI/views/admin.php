@@ -1,6 +1,6 @@
 <?php
 session_start();
-$loginstatus = $_SESSION['loggedIn'];
+require_once 'header.php';
 if ($_SESSION['admin'] != 1) {
     header('location: index.php?=user_must_be_an_administrator');
 }
@@ -29,7 +29,7 @@ if ($_SESSION['admin'] != 1) {
         <h2>Admin Lounge</h2>
     </div>
 
-    <ul class="ul">
+    <!-- <ul class="ul">
         <li class="li"><a id="loginBtn" href="login.php">Login</a></li>
         <li class="li"><a href="index.php">Home</a></li>
         <li class="li"><a href="profile.php">Profile</a></li>
@@ -39,23 +39,17 @@ if ($_SESSION['admin'] != 1) {
                 <input type="text" name="productName" placeholder="Search for a product name...">
                 <input type="submit" value="Search">
             </form>
-        </div>
-        <?php
-        if (isset($_SESSION['loggedIn']) == true) {
-            echo "<li class='li'><a href=../handlers/logout.php>Logout</a></li>";
-        }
-        ?>
-        <li class="li"><a href="../handlers/productSearchHandler.php">All Products</a></li>
-        <li class="li"><a href="../handlers/userHandler.php">All Users</a></li>
-        <li class="li"><a href="salesReportCreator.php">Sales Report</a></li>
-    </ul>
+        </div> -->
+    <?php
+    // if (isset($_SESSION['loggedIn']) == true) {
+    // echo "<li class='li'><a href=../handlers/logout.php>Logout</a></li>";
+    // }
+    ?>
+    <!-- <li class="li"><a href="../handlers/productSearchHandler.php">All Products</a></li> -->
+    <!-- <li class="li"><a href="../handlers/userHandler.php">All Users</a></li> -->
+    <!-- <li class="li"><a href="salesReportCreator.php">Sales Report</a></li> -->
+    <!-- </ul> -->
 
-    <script>
-    let x = <?php echo json_encode($loginstatus); ?>;
-    if (x == true) {
-        document.getElementById("loginBtn").style.visibility = "hidden";
-    }
-    </script>
 
     <div class="loginPos">
         <div class="formHeader">
@@ -77,7 +71,7 @@ if ($_SESSION['admin'] != 1) {
             </div>
         </form>
     </div>
-    <p style="position: absolute; top: 36em; left: 15em;">To edit an item, search for the product and select the item to
+    <p>To edit an item, search for the product and select the item to
         view the product.</p>
 
 
@@ -106,7 +100,7 @@ if ($_SESSION['admin'] != 1) {
             </div>
         </form>
     </div>
-    <p style="position: absolute; top: 36em; right: 17em;">To edit an account, use the 'All Users' link in the
+    <p style="position: absolute; top: 11em; right: 14em;">To edit an account, use the 'All Users' link in the
         navigation
         bar.</p>
 

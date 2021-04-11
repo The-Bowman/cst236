@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+require_once '../views/header.php';
+require_once 'C:\MAMP\htdocs\cst236\milestone\AutoLoader.php';
 session_start();
 require 'C:\MAMP\htdocs\cst236\milestone\Services\ProductBusinessService.php';
 
