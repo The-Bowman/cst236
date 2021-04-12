@@ -85,7 +85,7 @@ $items = $c->getItems();
 $total = $c->getTotal();
 
 if ($discount == "TAKE10") {
-    $total = $total - ($total * .1);
+    $total = round($total - ($total * .1), 2);
 }
 
 $order = new Order(null, date("Y/m/d h:i:s"), $_SESSION['userID'], $userAddressID, $total);
